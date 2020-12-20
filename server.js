@@ -1,21 +1,19 @@
 // Dependencies
 const express = require("express");
-const apiRoutes = require("./routes/apiRoutes")
-const htmlRoutes = require("./routes/htmlRoutes");
-
-// PORT
-const PORT = process.env.PORT || 8888;
 
 // Express
 const app = express();
 
+// Port
+const PORT = process.env.PORT || 8888;
+
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
-app.use(express.static(__dirname + "/public"));
+app.use(express.static(__dirname + "./public"));
 
-// Routes
-app.use("/api", apiRoutes);
-app.use("/", htmlRoutes);
+// // Routes
+require("./routes/apiRoutes.js")(app);
+require("./routes/htmlRoutes.js")(app);
 
 // Listener
 app.listen(PORT, function() {

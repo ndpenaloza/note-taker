@@ -20,5 +20,10 @@
   "bugs": {
     "url": "https://github.com/ndpenaloza/note-taker/issues"
   },
-  "homepage": "https://github.com/ndpenaloza/note-taker#readme"
+  "homepage": "https://github.com/ndpenaloza/note-taker#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "util": "^0.12.3",
+    "uuid": "^8.3.2"
+  }
 }
